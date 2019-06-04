@@ -1,4 +1,4 @@
-package model;
+package com.practo.model;
 
 public class Person {
 	String id;

@@ -1,10 +1,10 @@
-package service;
+package com.practo.service;
 
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
-import model.Person;
+import com.practo.model.Person;
 
 @Service
 public class PersonService {

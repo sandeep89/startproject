@@ -1,4 +1,4 @@
-package controller;
+package com.practo.controller;
 
 import java.util.ArrayList;
 
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import model.Person;
-import service.PersonService;
+import com.practo.model.Person;
+import com.practo.service.PersonService;
 
 @RestController
 @RequestMapping("/persons")
