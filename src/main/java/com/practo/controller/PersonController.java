@@ -1,6 +1,7 @@
 package com.practo.controller;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +24,7 @@ public class PersonController {
 	}
 	
 	@RequestMapping("{id}")
-	public Person getPerson(@PathVariable("id") String id) {
+	public Optional<Person> getPerson(@PathVariable("id") Long id) {
 		return ps.getPerson(id);
 	}
 }
