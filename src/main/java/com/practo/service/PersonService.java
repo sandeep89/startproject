@@ -1,6 +1,6 @@
 package com.practo.service;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,23 +15,22 @@ public class PersonService {
 	@Autowired
 	private PersonRepository personRepository;
 	
-	public PersonService() {
+	public PersonService() {}
+	
+	public Person addPerson() {
 		Person p = new Person();
+		p.setId(1l);
 		p.setAge(21);
 		p.setFirstName("Steve");
 		p.setLastName("Smith");
 		personRepository.save(p);
 
-		p = new Person();
-		p.setAge(25);
-		p.setFirstName("Tom");
-		p.setLastName("Brown");
-		personRepository.save(p);
+		return p;
 	}
 	public Optional<Person> getPerson(Long id) {
 	    return personRepository.findById(id);
 	}
-	public ArrayList<Person> getAll() {
-		return (ArrayList<Person>) personRepository.findAll();
+	public List<Person> getAll() {
+		return (List<Person>) personRepository.findAll();
 	}
 }

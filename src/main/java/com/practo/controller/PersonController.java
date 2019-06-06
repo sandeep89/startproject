@@ -1,6 +1,6 @@
 package com.practo.controller;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,17 +14,22 @@ import com.practo.service.PersonService;
 @RestController
 @RequestMapping("/persons")
 public class PersonController {
-
+	
 	@Autowired
 	PersonService ps;
 	
 	@RequestMapping("/all")
-	public ArrayList<Person> getAll(){
+	public List<Person> getAll(){
 		return ps.getAll();
 	}
 	
 	@RequestMapping("{id}")
 	public Optional<Person> getPerson(@PathVariable("id") Long id) {
 		return ps.getPerson(id);
+	}
+	
+	@RequestMapping("/add")
+	public Person addPerson() {
+		return ps.addPerson();
 	}
 }
